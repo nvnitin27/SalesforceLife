@@ -8,6 +8,7 @@ public with sharing class CampingListController {
     @AuraEnabled
     public static Camping_Item__c saveItem(Camping_Item__c campItem){
         try {
+            System.debug(campItem);
             upsert campItem;
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
